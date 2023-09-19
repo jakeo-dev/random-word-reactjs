@@ -1,5 +1,3 @@
-import React from "react";
-
 type ButtonProps = {
   text: string; // This prop expects a string
   onClick: () => void; // This prop expects a function that takes no arguments and returns nothing
