@@ -1,4 +1,5 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import Button from "./Button";
 
 function App() {
   const [word, setWord] = useState("");
@@ -473,7 +474,7 @@ function App() {
           Random Word
         </h1>
         <div className="block md:flex justify-center items-center mt-8 md:mt-14">
-          <button
+          <Button
             onClick={() => {
               let prefix = preList[Math.floor(Math.random() * preList.length)];
               let suffix = sufList[Math.floor(Math.random() * sufList.length)];
@@ -483,11 +484,9 @@ function App() {
               }
               setWord(prefix + suffix);
             }}
-            className="text-xl border-2 rounded-md px-4 py-2 mt-2 md:mt-0 md:ml-2 hover:bg-gray-100 active:bg-gray-200 transition-all"
-          >
-            Generate word
-          </button>
-          <button
+            text="Generate word"
+          ></Button>
+          <Button
             onClick={() =>
               window.open(
                 "https://my.urbandictionary.com/add.php?definition[word]=" +
@@ -495,10 +494,8 @@ function App() {
                 "_blank"
               )
             }
-            className="text-xl border-2 rounded-md px-4 py-2 mt-2 md:mt-0 md:ml-2 hover:bg-gray-100 active:bg-gray-200 transition-all"
-          >
-            Post to Urban Dictionary
-          </button>
+            text="Post to Urban Dictionary"
+          ></Button>
         </div>
         <p className="text-4xl text-center mt-8 md:mt-14">{word}</p>
       </div>
